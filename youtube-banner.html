@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Banner - JPEG Forever</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .banner {
+            width: 2560px;
+            height: 1440px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Subtle grid/tech background pattern */
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(225, 29, 36, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(225, 29, 36, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Red glow behind center content */
+        .glow {
+            position: absolute;
+            width: 1200px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(225, 29, 36, 0.12) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Safe area guide - remove or hide before screenshot */
+        .safe-area {
+            position: absolute;
+            width: 1546px;
+            height: 423px;
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            pointer-events: none;
+        }
+        .safe-label {
+            position: absolute;
+            top: -24px;
+            left: 0;
+            color: rgba(255, 255, 255, 0.25);
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo {
+            height: 140px;
+        }
+
+        .tagline {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 36px;
+            color: #aaa;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e11d24, transparent);
+        }
+
+        .games {
+            display: flex;
+            gap: 48px;
+            margin-top: 8px;
+        }
+        .game-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 22px;
+            color: #666;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .game-title .sep {
+            color: #e11d24;
+            margin: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- Dashed line shows the safe area visible on all devices. Hide before screenshotting if you want. -->
+        <div class="glow"></div>
+
+        <div class="content">
+            <img src="logo.png" alt="JPEG Forever" class="logo">
+            <div class="tagline">Game & App Development Studio</div>
+            <div class="divider"></div>
+            <div class="games">
+                <span class="game-title">Invasion 3000</span>
+                <span class="game-title"><span class="sep">|</span></span>
+                <span class="game-title">PicOut</span>
+                <span class="game-title"><span class="sep">|</span></span>
+                <span class="game-title">Roid-Combat</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
